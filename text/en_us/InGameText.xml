@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <!-- Section header. {1_Count} is the number of connected settlements. -->
+        <Replace Tag="LOC_CS_CONNECTED_COUNT">
+            <Text>{1_Count} Settlements Connected</Text>
+        </Replace>
+        <Replace Tag="LOC_CS_CONNECTED_SETTLEMENTS">
+            <Text>Connected Settlements</Text>
+        </Replace>
+    </EnglishText>
+</Database>
