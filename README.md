@@ -60,6 +60,15 @@ Things to confirm and likely tune:
 - Placement: we `appendChild` to the panel root. The exact spot/styling may
   need adjusting once seen on screen.
 
+## Preview image
+
+`assets/preview.png` is the Workshop/CivFanatics preview graphic.
+
+- **512×512, square, PNG, ~84 KB** — matches the Steam Workshop preview spec
+  (square, recommended ~512×512, under the 1 MB limit; PNG/JPG accepted).
+- Regenerate with `python3 tools/make_preview.py` (Pillow). It renders at 2×
+  and downsamples for crisp edges.
+
 ## Credits
 
 Approach studied from **City Hall** by *beezany* —
