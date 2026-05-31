@@ -1,0 +1,1 @@
+# civ7-connected-settlements-mod
