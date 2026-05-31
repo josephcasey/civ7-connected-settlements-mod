@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="jc-connected-settlements" version="1"
+<Mod id="jc-connected-settlements" version="2"
     xmlns="ModInfo">
     <Properties>
         <Name>LOC_MOD_CS_NAME</Name>
-        <Version>0.1.0</Version>
+        <Version>0.2.0</Version>
         <Description>LOC_MOD_CS_DESCRIPTION</Description>
         <Authors>josephcasey</Authors>
         <Package>Mod</Package>
@@ -31,7 +31,7 @@
             <Actions>
                 <UIScripts>
                     <Item>ui/cs-connections-model.js</Item>
-                    <Item>ui/cs-panel-city-details.js</Item>
+                    <Item>ui/cs-panel-production-chooser.js</Item>
                 </UIScripts>
                 <UpdateText>
                     <Item>text/en_us/InGameText.xml</Item>

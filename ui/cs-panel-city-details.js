@@ -1,13 +1,21 @@
-// Connected Settlements — City Details panel decorator
+// Connected Settlements — City Details panel decorator (ALTERNATE placement)
 //
 // Injects a "Connected Settlements" section (count + clickable list of names)
-// into the bottom of the vanilla City Details panel.
+// into the vanilla City Details panel (the right-hand panel). This is an
+// alternate to ui/cs-panel-production-chooser.js, which puts the same count in
+// the left-hand production/purchase panel. The modinfo loads only one of them;
+// swap the <Item> in connected-settlements.modinfo to use this placement.
 //
 // Technique (verified against City Hall, bszonye/civ7-city-hall v2.6.9):
 //   Controls.decorate("panel-city-details", factory)
-//       Registers a decorator that the engine instantiates for every
-//       panel-city-details component. We wrap the component's render()
-//       so our content is (re)built whenever the panel re-renders.
+//       Registers a decorator the engine instantiates per panel-city-details
+//       component. We wrap the component's render() so our content is rebuilt
+//       whenever the panel re-renders.
+//
+// Civ7 decorator contract (see core/ui/component-support.js): every decorator
+// MUST implement beforeAttach / afterAttach / beforeDetach / afterDetach — the
+// framework calls them unconditionally, so omitting them throws
+// "d.beforeDetach is not a function" on detach and breaks view switching.
 //
 // `Controls`, `Cities`, `UI`, and `Locale` are globals in the Civ7 UI sandbox.
 
@@ -43,9 +51,12 @@ class csCityDetailsConnections {
         };
     }
 
-    // Find the settlement this panel is currently showing.
-    // NOTE: verify in-game — if the panel exposes its own city handle in a
-    // future patch, prefer that over the global head selection.
+    // --- decorator lifecycle (all four required by the framework) ---
+    beforeAttach() {}
+    afterAttach() {}
+    beforeDetach() {}
+    afterDetach() {}
+
     getCurrentCity() {
         const id = UI.Player?.getHeadSelectedCity?.();
         return id ? Cities.get(id) : null;
@@ -60,16 +71,25 @@ class csCityDetailsConnections {
 
         const data = getConnectedSettlements(this.getCurrentCity());
 
+        // Always render — a count of 0 (e.g. a freshly founded city) is a valid
+        // state, and showing "0 Settlements Connected" makes it obvious the mod
+        // is active rather than silently broken.
+
+        // Append inside the growth tab's scrollable so the section is visible
+        // within the panel rather than spilling off the bottom of the screen.
+        // Falls back to root if the expected structure isn't found.
+        const growthSlot = root.querySelector("#city-details-tab-growth");
+        const scrollable = growthSlot?.querySelector("fxs-scrollable") ?? root;
+
         const section = document.createElement("div");
         section.classList.add(CS_SECTION_CLASS, "flex", "flex-col", "px-3", "py-2");
 
-        // Header: "N settlements connected"
+        // Header: "N Settlements Connected". Note: this is a fully composed
+        // string (parameter already substituted), so it goes in textContent —
+        // NOT data-l10n-id, which expects a raw localization KEY.
         const header = document.createElement("div");
         header.classList.add("font-title", "text-sm", "uppercase", "tracking-wide");
-        header.setAttribute(
-            "data-l10n-id",
-            Locale.compose("LOC_CS_CONNECTED_COUNT", data.total)
-        );
+        header.textContent = Locale.compose("LOC_CS_CONNECTED_COUNT", data.total);
         section.appendChild(header);
 
         // List: one clickable row per connected settlement.
@@ -88,7 +108,7 @@ class csCityDetailsConnections {
             section.appendChild(row);
         }
 
-        root.appendChild(section);
+        scrollable.appendChild(section);
     }
 
     // Clicking a settlement selects it (same behaviour as City Hall's links).
