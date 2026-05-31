@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <Row Tag="LOC_CS_CONNECTED_COUNT">
+            <Text>{1_Count} Settlements Connected</Text>
+        </Row>
+        <Row Tag="LOC_CS_CONNECTED_SETTLEMENTS">
+            <Text>Connected Settlements</Text>
+        </Row>
+    </EnglishText>
+</Database>

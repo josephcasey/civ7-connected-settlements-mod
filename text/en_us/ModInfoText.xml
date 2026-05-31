@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <Row Tag="LOC_MOD_CS_NAME">
+            <Text>Connected Settlements</Text>
+        </Row>
+        <Row Tag="LOC_MOD_CS_DESCRIPTION">
+            <Text>Shows how many settlements are connected to the selected city or town, with a clickable list, in the City Details panel.</Text>
+        </Row>
+    </EnglishText>
+</Database>
