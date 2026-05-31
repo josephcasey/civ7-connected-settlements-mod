@@ -3,7 +3,7 @@
   <Properties>
     <Name>LOC_MOD_CS_WORKSHOP_NAME</Name>
     <Description>LOC_MOD_CS_WORKSHOP_DESCRIPTION</Description>
-    <Authors>josephcasey</Authors>
+    <Authors>childofwight</Authors>
     <ShowInBrowser>1</ShowInBrowser>
     <Package>CommunityMod</Package>
     <PackageSortIndex>1000</PackageSortIndex>

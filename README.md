@@ -13,6 +13,8 @@ placement* below.)
 UI-only: it reads game state and never changes rules, so it does **not** affect
 saved games and is multiplayer-friendly.
 
+![Connected Settlements in the Production panel — "2 Settlements Connected" shown under the Production/Purchase tabs](assets/screenshot-production-panel.jpg)
+
 ## Inspiration & credit
 
 This mod was directly inspired by **City Hall** by *beezany / bszonye*
@@ -246,7 +248,7 @@ Notes from publishing this mod:
 
 ## License & credits
 
-- Author: **josephcasey**
+- Author: **childofwight**
 - Inspired by and indebted to **City Hall** by *beezany / bszonye*
   (<https://github.com/bszonye/civ7-city-hall>). Independent implementation, not
   derived code.

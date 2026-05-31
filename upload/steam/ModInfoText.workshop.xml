@@ -7,13 +7,13 @@
     <Row Tag="LOC_MOD_CS_WORKSHOP_DESCRIPTION">
       <Text>Know your trade network at a glance.
 
-Connected Settlements adds a simple "N Settlements Connected" readout to a city or town's Production / Purchase panel — the very screen where you decide what to build and which specialization a town should take. No more guessing how far your roads and routes actually reach: the number is right there while you plan.
+Connected Settlements adds a simple “N Settlements Connected” readout to a city or town's Production / Purchase panel — the very screen where you decide what to build and which specialization a town should take. No more guessing how far your roads and routes actually reach: the number is right there while you plan.
 
 [h3]What it does[/h3]
 [list]
 [*] Shows how many settlements are connected to the selected city or town
 [*] Updates instantly as you flip between cities with the panel's arrows
-[*] Shows "0 Settlements Connected" for a freshly founded city, so you always know it's working
+[*] Shows “0 Settlements Connected” for a freshly founded city, so you always know it's working
 [/list]
 
 [h3]Safe and lightweight[/h3]

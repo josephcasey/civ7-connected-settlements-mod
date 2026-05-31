@@ -5,7 +5,7 @@
         <Name>LOC_MOD_CS_NAME</Name>
         <Version>0.2.0</Version>
         <Description>LOC_MOD_CS_DESCRIPTION</Description>
-        <Authors>josephcasey</Authors>
+        <Authors>childofwight</Authors>
         <Package>Mod</Package>
         <!-- UI-only mod: does not change game rules, so it is save-safe. -->
         <AffectsSavedGames>0</AffectsSavedGames>
